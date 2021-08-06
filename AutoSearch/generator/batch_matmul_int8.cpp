@@ -33,7 +33,7 @@ public:
 
     Input<Buffer<int8_t>>    input_a{"input_a", 3}; //(dim0,dim1,dim2)=(width,heiht,batch)=(K,M,B)
     Input<Buffer<int8_t>>    input_b{"input_b", 3}; //(dim0,dim1,dim2)=(width,heiht,batch)=(N,K,B)
-    Output<Buffer<int8_t>>   output{"output", 3};  //(dim0,dim1,dim2)=(width,heiht,batch)=(N,M,B)
+    Output<Buffer<int>>   output{"output", 3};  //(dim0,dim1,dim2)=(width,heiht,batch)=(N,M,B)
 
     void generate() {
         Var x("x"), y("y"),b("b");
@@ -41,7 +41,7 @@ public:
         Func prod("prod"),Br("Br");
  
         // Algorithm
-        prod(x, y, b) = (int8_t)0;
+        prod(x, y, b) = 0;
         prod(x, y, b) += input_a(k, y, b) * input_b(x, k, b);
         output(x, y, b) = prod(x, y, b);
 

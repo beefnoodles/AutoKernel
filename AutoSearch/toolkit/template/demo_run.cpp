@@ -17,6 +17,7 @@ void init(Buffer<int8_t> &B)
 int main(int argc, char **argv) {
     {
         INPUT_TEMPLATE;
+        OUTPUT_TEMPLATE;
         INIT_INPUT;
         const auto benchmark_inner = [&]() {
             FUNC(DEMO_ARGS);

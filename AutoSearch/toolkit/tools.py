@@ -5,6 +5,7 @@ tools for autoschedulers and compile for different platform
 import argparse
 import platform
 import os
+import sys
 import time
 from collections import namedtuple
 import string
@@ -31,8 +32,8 @@ def run_cmd(cmd,display=False):
     '''
     run command in terminal
     '''
-    # if display:
-    print(cmd)
+    if display:
+        print(cmd)
     os.system(cmd)
 
 def insert_line(file_dir, content):
@@ -153,7 +154,7 @@ def compute_cost_time(input_shape,cfg):
     #demo_name = find_generator_name(cfg.gen)
     num_io = len(input_shape)
     input_name = ["_"+str(name) for name in range(num_io)]
-    #input_define = "#define INPUT_TEMPLATE Buffer<float> "
+    output_template_define = "#define OUTPUT_TEMPLATE Buffer<int> "
     input_define = "#define INPUT_TEMPLATE Buffer<int8_t> "
     init_define = "#define INIT_INPUT "
     args_define = "#define DEMO_ARGS "
@@ -164,26 +165,36 @@ def compute_cost_time(input_shape,cfg):
     iterator_define = "#define ITERATORS {}\n".format(cfg.num_iterators)
     for i in range(num_io):
         if i!=0:
-            input_define +=','
+            if i!=num_io-1:
+                input_define +=','
             args_define +=','
         if i!=num_io-1:
             init_define +='init({});'.format(input_name[i])
-        input_define +=input_name[i]
-        input_define +='('
-        for j in range(len(input_shape[i])):
-            if j!=0:
-                input_define +=','
-            input_define += str(input_shape[i][j])
-        input_define +=')'
+            input_define +=input_name[i]
+            input_define +='('
+            for j in range(len(input_shape[i])):
+                if j!=0:
+                    input_define +=','
+                input_define += str(input_shape[i][j])
+            input_define +=')'
+        else:
+            output_template_define +=input_name[i]
+            output_template_define +='('
+            for j in range(len(input_shape[i])):
+                if j!=0:
+                    output_template_define +=','
+                output_template_define += str(input_shape[i][j])
+            output_template_define +=')'
         args_define += input_name[i]
     insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, init_define)
-    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR,sample_define )
-    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR,iterator_define )
-    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR,input_define)
-    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR,args_define)
-    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR,output_define)
-    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR,func_define)
-    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR,include_name)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, sample_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, iterator_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, output_template_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, input_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, args_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, output_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, func_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, include_name)
     if "arm" not in target:
         # if platform is x86, we will excute the demo_run right now and get the result.
         #run_cmd('c++ -std=c++11 -I %s/src/runtime -I %s/tools ./RunGenMain.cpp ./samples/*.registration.cpp ./samples/*.a -o demo_run -DHALIDE_NO_PNG -DHALIDE_NO_JPEG -ldl -lpthread'
@@ -191,6 +202,7 @@ def compute_cost_time(input_shape,cfg):
         run_cmd('g++ %s/samples/demo_run.cpp %s/samples/%s.a -I %s/include -I %s/tools -ldl -lpthread -o demo_run'
         % (CURRENT_DIR, CURRENT_DIR, DEMO_NAME, HALIDE_DIR, HALIDE_ROOT))
         print("begin compute time for {}".format(input_shape))
+        sys.stdout.flush()
         #HL_NUM_THREADS=32 timeout -k 60s 60s ./temp/batch_1_0/0/bench --estimate_all --benchmarks=all
         #run_cmd('HL_NUM_THREADS=32 timeout -k 60s 60s ./demo_run --estimate_all --benchmarks=all')
         run_cmd('%s/demo_run' % CURRENT_DIR)

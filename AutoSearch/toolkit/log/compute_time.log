@@ -1,0 +1,275 @@
+using gpu
+begin compute time for [[128, 128, 1], [128, 128, 1], [128, 128, 1]]
+autokernel time:	2.3676 ms
+using gpu
+begin compute time for [[256, 256, 1], [256, 256, 1], [256, 256, 1]]
+autokernel time:	2.26331 ms
+using gpu
+begin compute time for [[512, 512, 1], [512, 512, 1], [512, 512, 1]]
+autokernel time:	2.56366 ms
+using gpu
+begin compute time for [[1024, 1024, 1], [1024, 1024, 1], [1024, 1024, 1]]
+autokernel time:	3.45618 ms
+using gpu
+begin compute time for [[147, 64, 1], [12544, 147, 1], [12544, 64, 1]]
+autokernel time:	2.18486 ms
+using gpu
+begin compute time for [[147, 65, 1], [12544, 147, 1], [12544, 65, 1]]
+autokernel time:	3.71624 ms
+using gpu
+begin compute time for [[576, 65, 1], [3136, 576, 1], [3136, 65, 1]]
+autokernel time:	3.264 ms
+using gpu
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+begin compute time for [[4608, 513, 1], [49, 4608, 1], [49, 513, 1]]
+Error: Input buffer input_b is accessed at -15, which is before the min (0) in dimension 0
+Aborted (core dumped)
+using gpu
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+begin compute time for [[1024, 2049, 1], [49, 1024, 1], [49, 2049, 1]]
+Error: Input buffer input_b is accessed at -15, which is before the min (0) in dimension 0
+Aborted (core dumped)
+using gpu
+begin compute time for [[1152, 129, 1], [784, 1152, 1], [784, 129, 1]]
+autokernel time:	4.06939 ms
+using gpu
+begin compute time for [[2304, 257, 1], [196, 2304, 1], [196, 257, 1]]
+autokernel time:	4.41972 ms
+using gpu
+begin compute time for [[256, 513, 1], [784, 256, 1], [784, 513, 1]]
+autokernel time:	3.22826 ms
+using gpu
+begin compute time for [[512, 1025, 1], [196, 512, 1], [196, 1025, 1]]
+autokernel time:	3.35399 ms
+using gpu
+begin compute time for [[256, 65, 1], [3136, 256, 1], [3136, 65, 1]]
+autokernel time:	3.70824 ms
+using gpu
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+begin compute time for [[512, 2049, 1], [49, 512, 1], [49, 2049, 1]]
+Error: Input buffer input_b is accessed at -15, which is before the min (0) in dimension 0
+Aborted (core dumped)
+using gpu
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+begin compute time for [[2048, 513, 1], [49, 2048, 1], [49, 513, 1]]
+Error: Input buffer input_b is accessed at -15, which is before the min (0) in dimension 0
+Aborted (core dumped)
+using gpu
+begin compute time for [[64, 257, 1], [3136, 64, 1], [3136, 257, 1]]
+autokernel time:	3.44507 ms
+using gpu
+begin compute time for [[512, 129, 1], [784, 512, 1], [784, 129, 1]]
+autokernel time:	4.02793 ms
+using gpu
+begin compute time for [[1024, 257, 1], [196, 1024, 1], [196, 257, 1]]
+autokernel time:	4.14602 ms
+using gpu
+begin compute time for [[256, 1025, 1], [196, 256, 1], [196, 1025, 1]]
+autokernel time:	3.80499 ms
+using gpu
+begin compute time for [[128, 513, 1], [784, 128, 1], [784, 513, 1]]
+autokernel time:	3.84207 ms
+using gpu
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("input_b.min.0", input_b.min.0, "0", 0)
+Warning: This pipeline is guaranteed to fail an assertion at runtime: 
+halide_error_constraint_violated("output.min.0", output.min.0, "0", 0)
+begin compute time for [[1024, 513, 1], [49, 1024, 1], [49, 513, 1]]
+Error: Input buffer input_b is accessed at -15, which is before the min (0) in dimension 0
+Aborted (core dumped)
+using gpu
+begin compute time for [[256, 129, 1], [784, 256, 1], [784, 129, 1]]
+autokernel time:	3.22884 ms
+using gpu
+begin compute time for [[512, 257, 1], [196, 512, 1], [196, 257, 1]]
+autokernel time:	3.17834 ms
+using gpu
+begin compute time for [[64, 65, 1], [3136, 64, 1], [3136, 65, 1]]
+autokernel time:	3.25945 ms
+using gpu
+begin compute time for [[27, 64, 1], [12769, 27, 1], [12769, 64, 1]]
+autokernel time:	5.59143 ms
+using gpu
+begin compute time for [[64, 16, 1], [3136, 64, 1], [3136, 16, 1]]
+autokernel time:	3.61434 ms
+using gpu
+begin compute time for [[144, 64, 1], [3136, 144, 1], [3136, 64, 1]]
+autokernel time:	3.40119 ms
+using gpu
+begin compute time for [[16, 64, 1], [3136, 16, 1], [3136, 64, 1]]
+autokernel time:	4.3624 ms
+using gpu
+begin compute time for [[128, 16, 1], [3136, 128, 1], [3136, 16, 1]]
+autokernel time:	3.95979 ms
+using gpu
+begin compute time for [[128, 32, 1], [784, 128, 1], [784, 32, 1]]
+autokernel time:	3.71434 ms
+using gpu
+begin compute time for [[288, 128, 1], [784, 288, 1], [784, 128, 1]]
+autokernel time:	3.69078 ms
+using gpu
+begin compute time for [[32, 128, 1], [784, 32, 1], [784, 128, 1]]
+autokernel time:	6.10215 ms
+using gpu
+begin compute time for [[256, 32, 1], [784, 256, 1], [784, 32, 1]]
+autokernel time:	3.29393 ms
+using gpu
+begin compute time for [[256, 48, 1], [196, 256, 1], [196, 48, 1]]
+autokernel time:	3.93035 ms
+using gpu
+begin compute time for [[432, 192, 1], [196, 432, 1], [196, 192, 1]]
+autokernel time:	3.69568 ms
+using gpu
+begin compute time for [[48, 192, 1], [196, 48, 1], [196, 192, 1]]
+autokernel time:	3.18959 ms
+using gpu
+begin compute time for [[384, 48, 1], [196, 384, 1], [196, 48, 1]]
+autokernel time:	3.67327 ms
+using gpu
+begin compute time for [[384, 64, 1], [196, 384, 1], [196, 64, 1]]
+autokernel time:	2.39754 ms
+using gpu
+begin compute time for [[576, 256, 1], [196, 576, 1], [196, 256, 1]]
+autokernel time:	3.68895 ms
+using gpu
+begin compute time for [[64, 256, 1], [196, 64, 1], [196, 256, 1]]
+autokernel time:	3.53399 ms
+using gpu
+begin compute time for [[512, 64, 1], [196, 512, 1], [196, 64, 1]]
+autokernel time:	3.60752 ms
+using gpu
+begin compute time for [[512, 1000, 1], [196, 512, 1], [196, 1000, 1]]
+autokernel time:	2.45311 ms
+compile finished , you can find the file in /workspace/AutoKernel/AutoSearch/toolkit/samples/

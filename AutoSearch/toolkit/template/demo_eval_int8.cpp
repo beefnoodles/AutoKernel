@@ -14,8 +14,8 @@ using namespace std;
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 #endif
 
-#ifndef FABS
-#define FABS(a) (((a) > 0) ? (a) : (-a))
+#ifndef ABS
+#define ABS(a) (((a) > 0) ? (a) : (-a))
 #endif
 
 // For x86-64-linux:
@@ -61,9 +61,9 @@ void init(int8_t* data,int size, int mode)
     }
 }
 
-float maxerr(int8_t* pred, int8_t* gt, int size)
+int maxerr(int* pred, int* gt, int size)
 {
-    float maxError = 0.f;
+    int maxError = 0;
     for(int i=0; i< size; i++){
             maxError = MAX(FABS(gt[i] - pred[i]), maxError);
     }
@@ -76,7 +76,7 @@ int main()
     int8_t a[M*K*B];
     int8_t b[N*K*B];
     int halide_c[M*N*B];
-    int8_t ref_c[M*N*B];
+    int ref_c[M*N*B];
 
     //input data random init 
     init(a,M*K*B,RAND);
