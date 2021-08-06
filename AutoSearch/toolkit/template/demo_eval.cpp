@@ -29,7 +29,7 @@ const int N=512;
 const int M=512;
 const int K=512;
 
-void ref_func(float*data_a,float*data_b,float*data_c)
+void ref_func(int8_t*data_a,int8_t*data_b,int8_t*data_c)
 {
     for(int b=0;b<B;b++)
     {
@@ -47,7 +47,7 @@ void ref_func(float*data_a,float*data_b,float*data_c)
         }
     }
 }
-void init(float* data,int size, int mode)
+void init(int8_t* data,int size, int mode)
 {
     srand(0); //set rand_seed
     int i;
@@ -57,11 +57,11 @@ void init(float* data,int size, int mode)
         else if (mode == ONE)
             data[i] = 1;
         else
-            data[i] = (float)rand() / RAND_MAX;
+            data[i] = (int)rand();
     }
 }
 
-float maxerr(float* pred, float* gt, int size)
+float maxerr(int8_t* pred, int8_t* gt, int size)
 {
     float maxError = 0.f;
     for(int i=0; i< size; i++){
@@ -73,10 +73,10 @@ float maxerr(float* pred, float* gt, int size)
 
 int main()
 {
-    float a[M*K*B];
-    float b[N*K*B];
-    float halide_c[M*N*B];
-    float ref_c[M*N*B];
+    int8_t a[M*K*B];
+    int8_t b[N*K*B];
+    int8_t halide_c[M*N*B];
+    int8_t ref_c[M*N*B];
 
     //input data random init 
     init(a,M*K*B,RAND);
@@ -85,9 +85,9 @@ int main()
     init(halide_c,M*N*B,ZERO);
     init(ref_c, M*N*B,ZERO);
 
-    Halide::Runtime::Buffer<float> Halide_A((float*)a, K,M,B);
-    Halide::Runtime::Buffer<float> Halide_B((float*)b, N,K,B);
-    Halide::Runtime::Buffer<float> Halide_C((float*)halide_c, N,M,B);
+    Halide::Runtime::Buffer<int8_t> Halide_A((int8_t*)a, K,M,B);
+    Halide::Runtime::Buffer<int8_t> Halide_B((int8_t*)b, N,K,B);
+    Halide::Runtime::Buffer<int8_t> Halide_C((int8_t*)halide_c, N,M,B);
 
     matmul(Halide_A,Halide_B,Halide_C);
     ref_func(a,b,ref_c);

@@ -31,8 +31,8 @@ def run_cmd(cmd,display=False):
     '''
     run command in terminal
     '''
-    if display:
-        print(cmd)
+    # if display:
+    print(cmd)
     os.system(cmd)
 
 def insert_line(file_dir, content):
@@ -153,7 +153,8 @@ def compute_cost_time(input_shape,cfg):
     #demo_name = find_generator_name(cfg.gen)
     num_io = len(input_shape)
     input_name = ["_"+str(name) for name in range(num_io)]
-    input_define = "#define INPUT_TEMPLATE Buffer<float> "
+    #input_define = "#define INPUT_TEMPLATE Buffer<float> "
+    input_define = "#define INPUT_TEMPLATE Buffer<int8_t> "
     init_define = "#define INIT_INPUT "
     args_define = "#define DEMO_ARGS "
     output_define = "#define OUTPUT "+input_name[-1]

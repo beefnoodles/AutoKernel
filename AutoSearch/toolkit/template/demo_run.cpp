@@ -7,11 +7,11 @@
 using Halide::Runtime::Buffer;
 using namespace std::chrono;
 using namespace std;
-void init(Buffer<float> &B)
+void init(Buffer<int8_t> &B)
 {
     for (auto iter=B.begin();iter!=B.end();iter++)
     {
-        (*iter) = rand()*1.0/RAND_MAX;
+        (*iter) = rand();
     }
 }
 int main(int argc, char **argv) {
