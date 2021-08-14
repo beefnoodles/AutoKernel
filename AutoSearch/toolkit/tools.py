@@ -150,12 +150,20 @@ def compute_cost_time(input_shape,cfg):
     Calculate the execution time by modifying the shape and other information in demorun.cpp File.
     The benchmark of halide is the key function
     '''
+    import re
     target = cfg.target
     #demo_name = find_generator_name(cfg.gen)
     num_io = len(input_shape)
     input_name = ["_"+str(name) for name in range(num_io)]
-    output_template_define = "#define OUTPUT_TEMPLATE Buffer<int> "
-    input_define = "#define INPUT_TEMPLATE Buffer<int8_t> "
+    if re.match(".+_int8", DEMO_NAME):
+        #print("int8 template header")
+        output_template_define = "#define OUTPUT_TEMPLATE Buffer<int> "
+        input_define = "#define INPUT_TEMPLATE Buffer<int8_t> "
+        init_type = "#define INIT_TYPE int8_t"
+    else:
+        output_template_define = "#define OUTPUT_TEMPLATE Buffer<float> "
+        input_define = "#define INPUT_TEMPLATE Buffer<float> "
+        init_type = "#define INIT_TYPE float"
     init_define = "#define INIT_INPUT "
     args_define = "#define DEMO_ARGS "
     output_define = "#define OUTPUT "+input_name[-1]
@@ -187,6 +195,7 @@ def compute_cost_time(input_shape,cfg):
             output_template_define +=')'
         args_define += input_name[i]
     insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, init_define)
+    insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, init_type)
     insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, sample_define)
     insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, iterator_define)
     insert_line('%s/samples/demo_run.cpp' % CURRENT_DIR, output_template_define)

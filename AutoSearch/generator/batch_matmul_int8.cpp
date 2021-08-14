@@ -109,4 +109,4 @@ public:
 
 }  // namespace
 
-HALIDE_REGISTER_GENERATOR(BatchMatmul, matmul)
+HALIDE_REGISTER_GENERATOR(BatchMatmul, matmul_int8)

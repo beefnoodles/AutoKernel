@@ -7,13 +7,14 @@
 using Halide::Runtime::Buffer;
 using namespace std::chrono;
 using namespace std;
-void init(Buffer<int8_t> &B)
+void init(Buffer<INIT_TYPE> &B)
 {
     for (auto iter=B.begin();iter!=B.end();iter++)
     {
         (*iter) = rand();
     }
 }
+
 int main(int argc, char **argv) {
     {
         INPUT_TEMPLATE;

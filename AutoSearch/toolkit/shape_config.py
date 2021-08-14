@@ -48,12 +48,12 @@ matmul_args = [
     [1,64,196,512],
     [1,1000,196,512],
 ]
-# matmul_args = [
-#    [1, 128, 128, 128],
-#    [1, 256, 256, 256],
-#    [1, 512, 512, 512],
-#    [1, 1024, 1024, 1024],
-#]
+matmul_args = [
+    [1, 128, 128, 128],
+    [1, 256, 256, 256],
+    [1, 512, 512, 512],
+    [1, 1024, 1024, 1024],
+]
 
 def get_shapes():
     matmul_shapes = []
@@ -74,8 +74,10 @@ def get_shapes():
 
 shape_dict = {
     'matmul': get_shapes(),
+    'matmul_int8': get_shapes(),
 }
 
 args_dict = {
     'matmul': matmul_args,
+    'matmul_int8': matmul_args,
 }
