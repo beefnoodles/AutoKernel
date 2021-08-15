@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <iostream>
 #include "HalideBuffer.h"
+#include <math.h>
 
-#include "demo_1_512_512_512.h"
+#include "matmul_1_512_512_512.h"
 using namespace std;
 
 #define ZERO 0
@@ -29,7 +30,7 @@ const int N=512;
 const int M=512;
 const int K=512;
 
-void ref_func(int8_t*data_a,int8_t*data_b,int8_t*data_c)
+void ref_func(float*data_a,float*data_b,float*data_c)
 {
     for(int b=0;b<B;b++)
     {
@@ -47,7 +48,7 @@ void ref_func(int8_t*data_a,int8_t*data_b,int8_t*data_c)
         }
     }
 }
-void init(int8_t* data,int size, int mode)
+void init(float* data,int size, int mode)
 {
     srand(0); //set rand_seed
     int i;
@@ -57,15 +58,16 @@ void init(int8_t* data,int size, int mode)
         else if (mode == ONE)
             data[i] = 1;
         else
-            data[i] = (int)rand();
+            data[i] = (float)rand() / RAND_MAX;
     }
 }
 
-float maxerr(int8_t* pred, int8_t* gt, int size)
+float maxerr(float* pred, float* gt, int size)
 {
     float maxError = 0.f;
     for(int i=0; i< size; i++){
-            maxError = MAX(FABS(gt[i] - pred[i]), maxError);
+            maxError = MAX(fabs(gt[i] - pred[i]), maxError);
+	    printf("val of gt[i]: %.6f\n", gt[i]);
     }
     printf("maxerr %.6f\t", maxError);
     return maxError;
@@ -73,10 +75,10 @@ float maxerr(int8_t* pred, int8_t* gt, int size)
 
 int main()
 {
-    int8_t a[M*K*B];
-    int8_t b[N*K*B];
-    int halide_c[M*N*B];
-    int8_t ref_c[M*N*B];
+    float a[M*K*B];
+    float b[N*K*B];
+    float halide_c[M*N*B];
+    float ref_c[M*N*B];
 
     //input data random init 
     init(a,M*K*B,RAND);
@@ -85,11 +87,15 @@ int main()
     init(halide_c,M*N*B,ZERO);
     init(ref_c, M*N*B,ZERO);
 
-    Halide::Runtime::Buffer<int8_t> Halide_A((int8_t*)a, K,M,B);
-    Halide::Runtime::Buffer<int8_t> Halide_B((int8_t*)b, N,K,B);
-    Halide::Runtime::Buffer<int8_t> Halide_C((int*)halide_c, N,M,B);
-
+    Halide::Runtime::Buffer<float> Halide_A((float*)a, K,M,B);
+    Halide::Runtime::Buffer<float> Halide_B((float*)b, N,K,B);
+    Halide::Runtime::Buffer<float> Halide_C((float*)halide_c, N,M,B);
+    
+    Halide_A.set_host_dirty();
+    Halide_B.set_host_dirty();
     matmul(Halide_A,Halide_B,Halide_C);
+    Halide_C.copy_to_host();
+
     ref_func(a,b,ref_c);
 
     if (maxerr(ref_c,halide_c,M*N*B)<0.001)

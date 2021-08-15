@@ -3,7 +3,7 @@
 #include <iostream>
 #include "HalideBuffer.h"
 
-#include "demo_1_512_512_512.h"
+#include "matmul_int8_1_512_512_512.h"
 using namespace std;
 
 #define ZERO 0
@@ -29,7 +29,7 @@ const int N=512;
 const int M=512;
 const int K=512;
 
-void ref_func(int8_t*data_a,int8_t*data_b,int8_t*data_c)
+void ref_func(int8_t*data_a,int8_t*data_b,int*data_c)
 {
     for(int b=0;b<B;b++)
     {
@@ -47,7 +47,7 @@ void ref_func(int8_t*data_a,int8_t*data_b,int8_t*data_c)
         }
     }
 }
-void init(int8_t* data,int size, int mode)
+void init(int* data,int size, int mode)
 {
     srand(0); //set rand_seed
     int i;
@@ -60,14 +60,31 @@ void init(int8_t* data,int size, int mode)
             data[i] = (int)rand();
     }
 }
+void init_int8(int8_t* data,int size, int mode)
+{
+    srand(0); //set rand_seed
+    int i;
+    for (i = 0; i < size; ++i) {
+        if (mode == ZERO)
+            data[i] = 0;
+        else if (mode == ONE)
+            data[i] = 1;
+        else
+            data[i] = ((int8_t)(rand()%13));
+    }
+}
 
 int maxerr(int* pred, int* gt, int size)
 {
     int maxError = 0;
     for(int i=0; i< size; i++){
-            maxError = MAX(FABS(gt[i] - pred[i]), maxError);
+            maxError = MAX(abs(gt[i] - pred[i]), maxError);
+	    if (gt[i] != pred[i])
+	    {
+		    printf("diff at index: %d, gt[i]: %d, pred[i]: %d\n",i,gt[i],pred[i]);
+	    }
     }
-    printf("maxerr %.6f\t", maxError);
+    printf("maxerr %d\t", maxError);
     return maxError;
 }
 
@@ -79,17 +96,21 @@ int main()
     int ref_c[M*N*B];
 
     //input data random init 
-    init(a,M*K*B,RAND);
-    init(b,N*K*B,RAND);
+    init_int8(a,M*K*B,RAND);
+    init_int8(b,N*K*B,RAND);
     // output data zero init
     init(halide_c,M*N*B,ZERO);
     init(ref_c, M*N*B,ZERO);
 
     Halide::Runtime::Buffer<int8_t> Halide_A((int8_t*)a, K,M,B);
     Halide::Runtime::Buffer<int8_t> Halide_B((int8_t*)b, N,K,B);
-    Halide::Runtime::Buffer<int8_t> Halide_C((int*)halide_c, N,M,B);
+    Halide::Runtime::Buffer<int> Halide_C((int*)halide_c, N,M,B);
 
-    matmul(Halide_A,Halide_B,Halide_C);
+    Halide_A.set_host_dirty();
+    Halide_B.set_host_dirty();
+    matmul_int8(Halide_A,Halide_B,Halide_C);
+    Halide_C.copy_to_host();
+
     ref_func(a,b,ref_c);
 
     if (maxerr(ref_c,halide_c,M*N*B)<0.001)
