@@ -1,0 +1,88 @@
+begin compute time for [[128, 128, 1], [128, 128, 1], [128, 128, 1]]
+autokernel time:	2.94814 ms
+begin compute time for [[256, 256, 1], [256, 256, 1], [256, 256, 1]]
+autokernel time:	2.9923 ms
+begin compute time for [[512, 512, 1], [512, 512, 1], [512, 512, 1]]
+autokernel time:	2.51541 ms
+begin compute time for [[1024, 1024, 1], [1024, 1024, 1], [1024, 1024, 1]]
+autokernel time:	4.26401 ms
+begin compute time for [[147, 64, 1], [12544, 147, 1], [12544, 64, 1]]
+autokernel time:	2.80563 ms
+begin compute time for [[147, 65, 1], [12544, 147, 1], [12544, 65, 1]]
+autokernel time:	2.97165 ms
+begin compute time for [[576, 65, 1], [3136, 576, 1], [3136, 65, 1]]
+autokernel time:	2.68161 ms
+begin compute time for [[4608, 513, 1], [49, 4608, 1], [49, 513, 1]]
+autokernel time:	2.93666 ms
+begin compute time for [[1024, 2049, 1], [49, 1024, 1], [49, 2049, 1]]
+autokernel time:	2.98051 ms
+begin compute time for [[1152, 129, 1], [784, 1152, 1], [784, 129, 1]]
+autokernel time:	2.88056 ms
+begin compute time for [[2304, 257, 1], [196, 2304, 1], [196, 257, 1]]
+autokernel time:	3.11531 ms
+begin compute time for [[256, 513, 1], [784, 256, 1], [784, 513, 1]]
+autokernel time:	3.1469 ms
+begin compute time for [[512, 1025, 1], [196, 512, 1], [196, 1025, 1]]
+autokernel time:	3.14411 ms
+begin compute time for [[256, 65, 1], [3136, 256, 1], [3136, 65, 1]]
+autokernel time:	2.95385 ms
+begin compute time for [[512, 2049, 1], [49, 512, 1], [49, 2049, 1]]
+autokernel time:	2.79844 ms
+begin compute time for [[2048, 513, 1], [49, 2048, 1], [49, 513, 1]]
+autokernel time:	3.09102 ms
+begin compute time for [[64, 257, 1], [3136, 64, 1], [3136, 257, 1]]
+autokernel time:	3.16158 ms
+begin compute time for [[512, 129, 1], [784, 512, 1], [784, 129, 1]]
+autokernel time:	2.97811 ms
+begin compute time for [[1024, 257, 1], [196, 1024, 1], [196, 257, 1]]
+autokernel time:	3.08781 ms
+begin compute time for [[256, 1025, 1], [196, 256, 1], [196, 1025, 1]]
+autokernel time:	3.05966 ms
+begin compute time for [[128, 513, 1], [784, 128, 1], [784, 513, 1]]
+autokernel time:	2.99028 ms
+begin compute time for [[1024, 513, 1], [49, 1024, 1], [49, 513, 1]]
+autokernel time:	3.11169 ms
+begin compute time for [[256, 129, 1], [784, 256, 1], [784, 129, 1]]
+autokernel time:	3.09798 ms
+begin compute time for [[512, 257, 1], [196, 512, 1], [196, 257, 1]]
+autokernel time:	2.62361 ms
+begin compute time for [[64, 65, 1], [3136, 64, 1], [3136, 65, 1]]
+autokernel time:	2.66344 ms
+begin compute time for [[27, 64, 1], [12769, 27, 1], [12769, 64, 1]]
+autokernel time:	2.84913 ms
+begin compute time for [[64, 16, 1], [3136, 64, 1], [3136, 16, 1]]
+autokernel time:	2.59629 ms
+begin compute time for [[144, 64, 1], [3136, 144, 1], [3136, 64, 1]]
+autokernel time:	2.65833 ms
+begin compute time for [[16, 64, 1], [3136, 16, 1], [3136, 64, 1]]
+autokernel time:	2.69218 ms
+begin compute time for [[128, 16, 1], [3136, 128, 1], [3136, 16, 1]]
+autokernel time:	2.68707 ms
+begin compute time for [[128, 32, 1], [784, 128, 1], [784, 32, 1]]
+autokernel time:	2.98097 ms
+begin compute time for [[288, 128, 1], [784, 288, 1], [784, 128, 1]]
+autokernel time:	2.77304 ms
+begin compute time for [[32, 128, 1], [784, 32, 1], [784, 128, 1]]
+autokernel time:	2.98059 ms
+begin compute time for [[256, 32, 1], [784, 256, 1], [784, 32, 1]]
+autokernel time:	2.9227 ms
+begin compute time for [[256, 48, 1], [196, 256, 1], [196, 48, 1]]
+autokernel time:	3.09342 ms
+begin compute time for [[432, 192, 1], [196, 432, 1], [196, 192, 1]]
+autokernel time:	3.09866 ms
+begin compute time for [[48, 192, 1], [196, 48, 1], [196, 192, 1]]
+autokernel time:	3.05884 ms
+begin compute time for [[384, 48, 1], [196, 384, 1], [196, 48, 1]]
+autokernel time:	2.98729 ms
+begin compute time for [[384, 64, 1], [196, 384, 1], [196, 64, 1]]
+autokernel time:	2.35814 ms
+begin compute time for [[576, 256, 1], [196, 576, 1], [196, 256, 1]]
+autokernel time:	3.0433 ms
+begin compute time for [[64, 256, 1], [196, 64, 1], [196, 256, 1]]
+autokernel time:	2.82683 ms
+begin compute time for [[512, 64, 1], [196, 512, 1], [196, 64, 1]]
+autokernel time:	2.79426 ms
+begin compute time for [[512, 1000, 1], [196, 512, 1], [196, 1000, 1]]
+Error: Input buffer input_a is accessed at 1007, which is beyond the max (999) in dimension 1
+Aborted (core dumped)
+compile finished , you can find the file in /workspace/AutoKernel/AutoSearch/toolkit/samples/

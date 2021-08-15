@@ -1,0 +1,131 @@
+using gpu
+begin compute time for [[128, 128, 1], [128, 128, 1], [128, 128, 1]]
+autokernel time:	2.90337 ms
+using gpu
+begin compute time for [[256, 256, 1], [256, 256, 1], [256, 256, 1]]
+autokernel time:	2.96608 ms
+using gpu
+begin compute time for [[512, 512, 1], [512, 512, 1], [512, 512, 1]]
+autokernel time:	2.52443 ms
+using gpu
+begin compute time for [[1024, 1024, 1], [1024, 1024, 1], [1024, 1024, 1]]
+autokernel time:	4.26893 ms
+using gpu
+begin compute time for [[147, 64, 1], [12544, 147, 1], [12544, 64, 1]]
+autokernel time:	2.98821 ms
+using gpu
+begin compute time for [[147, 65, 1], [12544, 147, 1], [12544, 65, 1]]
+autokernel time:	2.73128 ms
+using gpu
+begin compute time for [[576, 65, 1], [3136, 576, 1], [3136, 65, 1]]
+autokernel time:	3.02761 ms
+using gpu
+begin compute time for [[4608, 513, 1], [49, 4608, 1], [49, 513, 1]]
+autokernel time:	2.93832 ms
+using gpu
+begin compute time for [[1024, 2049, 1], [49, 1024, 1], [49, 2049, 1]]
+autokernel time:	2.91293 ms
+using gpu
+begin compute time for [[1152, 129, 1], [784, 1152, 1], [784, 129, 1]]
+autokernel time:	3.13887 ms
+using gpu
+begin compute time for [[2304, 257, 1], [196, 2304, 1], [196, 257, 1]]
+autokernel time:	3.07902 ms
+using gpu
+begin compute time for [[256, 513, 1], [784, 256, 1], [784, 513, 1]]
+autokernel time:	3.07812 ms
+using gpu
+begin compute time for [[512, 1025, 1], [196, 512, 1], [196, 1025, 1]]
+autokernel time:	3.08945 ms
+using gpu
+begin compute time for [[256, 65, 1], [3136, 256, 1], [3136, 65, 1]]
+autokernel time:	3.14194 ms
+using gpu
+begin compute time for [[512, 2049, 1], [49, 512, 1], [49, 2049, 1]]
+autokernel time:	2.82517 ms
+using gpu
+begin compute time for [[2048, 513, 1], [49, 2048, 1], [49, 513, 1]]
+autokernel time:	3.09353 ms
+using gpu
+begin compute time for [[64, 257, 1], [3136, 64, 1], [3136, 257, 1]]
+autokernel time:	3.13513 ms
+using gpu
+begin compute time for [[512, 129, 1], [784, 512, 1], [784, 129, 1]]
+autokernel time:	3.11192 ms
+using gpu
+begin compute time for [[1024, 257, 1], [196, 1024, 1], [196, 257, 1]]
+autokernel time:	3.03159 ms
+using gpu
+begin compute time for [[256, 1025, 1], [196, 256, 1], [196, 1025, 1]]
+autokernel time:	3.09443 ms
+using gpu
+begin compute time for [[128, 513, 1], [784, 128, 1], [784, 513, 1]]
+autokernel time:	2.92082 ms
+using gpu
+begin compute time for [[1024, 513, 1], [49, 1024, 1], [49, 513, 1]]
+autokernel time:	3.12976 ms
+using gpu
+begin compute time for [[256, 129, 1], [784, 256, 1], [784, 129, 1]]
+autokernel time:	2.92936 ms
+using gpu
+begin compute time for [[512, 257, 1], [196, 512, 1], [196, 257, 1]]
+autokernel time:	2.79427 ms
+using gpu
+begin compute time for [[64, 65, 1], [3136, 64, 1], [3136, 65, 1]]
+autokernel time:	2.92747 ms
+using gpu
+begin compute time for [[27, 64, 1], [12769, 27, 1], [12769, 64, 1]]
+autokernel time:	3.07619 ms
+using gpu
+begin compute time for [[64, 16, 1], [3136, 64, 1], [3136, 16, 1]]
+autokernel time:	5.05201 ms
+using gpu
+begin compute time for [[144, 64, 1], [3136, 144, 1], [3136, 64, 1]]
+autokernel time:	2.59893 ms
+using gpu
+begin compute time for [[16, 64, 1], [3136, 16, 1], [3136, 64, 1]]
+autokernel time:	2.81327 ms
+using gpu
+begin compute time for [[128, 16, 1], [3136, 128, 1], [3136, 16, 1]]
+autokernel time:	2.67858 ms
+using gpu
+begin compute time for [[128, 32, 1], [784, 128, 1], [784, 32, 1]]
+autokernel time:	2.76902 ms
+using gpu
+begin compute time for [[288, 128, 1], [784, 288, 1], [784, 128, 1]]
+autokernel time:	2.716 ms
+using gpu
+begin compute time for [[32, 128, 1], [784, 32, 1], [784, 128, 1]]
+autokernel time:	2.55864 ms
+using gpu
+begin compute time for [[256, 32, 1], [784, 256, 1], [784, 32, 1]]
+autokernel time:	2.80531 ms
+using gpu
+begin compute time for [[256, 48, 1], [196, 256, 1], [196, 48, 1]]
+autokernel time:	2.83628 ms
+using gpu
+begin compute time for [[432, 192, 1], [196, 432, 1], [196, 192, 1]]
+autokernel time:	2.623 ms
+using gpu
+begin compute time for [[48, 192, 1], [196, 48, 1], [196, 192, 1]]
+autokernel time:	3.0738 ms
+using gpu
+begin compute time for [[384, 48, 1], [196, 384, 1], [196, 48, 1]]
+autokernel time:	3.00313 ms
+using gpu
+begin compute time for [[384, 64, 1], [196, 384, 1], [196, 64, 1]]
+autokernel time:	2.18852 ms
+using gpu
+begin compute time for [[576, 256, 1], [196, 576, 1], [196, 256, 1]]
+autokernel time:	2.51179 ms
+using gpu
+begin compute time for [[64, 256, 1], [196, 64, 1], [196, 256, 1]]
+autokernel time:	2.7611 ms
+using gpu
+begin compute time for [[512, 64, 1], [196, 512, 1], [196, 64, 1]]
+autokernel time:	3.6404 ms
+using gpu
+begin compute time for [[512, 1000, 1], [196, 512, 1], [196, 1000, 1]]
+Error: Input buffer input_a is accessed at 1007, which is beyond the max (999) in dimension 1
+Aborted (core dumped)
+compile finished , you can find the file in /workspace/AutoKernel/AutoSearch/toolkit/samples/

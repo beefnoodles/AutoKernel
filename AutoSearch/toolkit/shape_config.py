@@ -48,9 +48,9 @@ matmul_args = [
     [1,64,196,512],
     [1,1000,196,512],
 ]
-matmul_args = [
-    [1, 512, 512, 512],
-]
+#matmul_args = [
+#    [1, 512, 512, 512],
+#]
 
 def get_shapes():
     matmul_shapes = []
